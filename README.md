@@ -1,9 +1,4 @@
-# MERN-Stack Infrastructure
+# WKB1EMP Internet Radio Station Automation System
 
-Clone this repo to provide the starter code for a comprehensive MERN-Stack project including token-based authentication.
-
-Don't forget to:
-
-    nodemon server
-    npm start
+Project Four!
 
