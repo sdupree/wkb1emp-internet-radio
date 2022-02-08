@@ -12,13 +12,14 @@ export default function Menu({user, setUser}) {
   return (
     <>
     <BurgerMenu right={true}>
+      <h2>Hello, {user.name}</h2>
       <Link to="/">Homepage</Link>
       <Link to="/playlist/upcoming">Upcoming Songs</Link>
-      <Link to="/playlist/upcoming">Previous Songs</Link>
-      <Link to="/playlist/upcoming">Search For A Song</Link>
+      <Link to="/playlist/history">Previous Songs</Link>
+      <Link to="/songs/search">Search For A Song</Link>
+      <Link onClick={handleLogOut} to="">Log Out</Link>
     </BurgerMenu>
-
-    Hello, {user.name} - <Link onClick={handleLogOut} to="">Log Out</Link>
+    
     </>
   );
 }
