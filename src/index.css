@@ -8,6 +8,7 @@
   --orange: #F67F00;
   --text-light: #968c84;
   --text-dark: #615954;
+  --green-bar: #00b03e;
 }
 
 *, *:before, *:after {
@@ -21,9 +22,14 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
+  background-color: black;
+  color: #d4d4d4;
   padding: 2vmin;
   height: 100vh;
+}
+
+a {
+  color: #6cf;
 }
 
 code {

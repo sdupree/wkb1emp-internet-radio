@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import * as userService from "../../utilities/users-service";
+import { slide as BurgerMenu } from 'react-burger-menu'
+import './Menu.css';
 
 export default function Menu({user, setUser}) {
   function handleLogOut() {
@@ -8,16 +10,15 @@ export default function Menu({user, setUser}) {
   }
   
   return (
-    <nav>
+    <>
+    <BurgerMenu right={true}>
       <Link to="/">Homepage</Link>
-      &nbsp; | &nbsp;
       <Link to="/playlist/upcoming">Upcoming Songs</Link>
-      &nbsp; | &nbsp;
       <Link to="/playlist/upcoming">Previous Songs</Link>
-      &nbsp; | &nbsp;
       <Link to="/playlist/upcoming">Search For A Song</Link>
-      &nbsp; | &nbsp;
-      Hello, {user.name} - <Link onClick={handleLogOut} to="">Log Out</Link>
-    </nav>
+    </BurgerMenu>
+
+    Hello, {user.name} - <Link onClick={handleLogOut} to="">Log Out</Link>
+    </>
   );
 }
