@@ -11,7 +11,7 @@ export default function AuthPage({ setUser }) {
     <main className="AuthPage">
       <div>
         {/* <Logo /> */}
-        <h3 onClick={() => setShowLogin(!showLogin)}>{showLogin ? 'SIGN UP' : 'LOG IN'}</h3>
+        <h3 onClick={() => setShowLogin(!showLogin)}>{showLogin ? '[ Show SIGN UP Form ]' : '[ Show LOG IN Form ]'}</h3>
       </div>
       {showLogin ? <LoginForm setUser={setUser} /> : <SignUpForm setUser={setUser} />}
     </main>

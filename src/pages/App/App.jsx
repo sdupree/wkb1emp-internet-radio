@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { getUser } from '../../utilities/users-service';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import AuthPage from '../AuthPage/AuthPage';
 import HomePage from '../HomePage/HomePage';
 import PlaylistHistoryPage from '../PlaylistHistoryPage/PlaylistHistoryPage';
@@ -21,6 +21,8 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/playlist/history" element={<PlaylistHistoryPage />} />
           <Route path="/songs/search" element={<SongSearchPage />} />
+          <Route path="/authpage" element={<AuthPage />} />
+          <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
       </>
     </main>
