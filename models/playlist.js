@@ -22,4 +22,3 @@ async function deleteEntry(req, res) {
   const playlist = await Playlist.findById(req.params.id);
   res.json(playlist);
 }
-  
