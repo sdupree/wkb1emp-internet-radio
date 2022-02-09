@@ -1,7 +1,7 @@
 const Schema = require('mongoose').Schema;
 
 const playlistSchema = new Schema({
-  song: {type: Schema.Types.ObjectId, ref: 'Song', required: true},
+  entry: {type: Schema.Types.ObjectId, ref: 'Song', required: true},
   requester: {type: Schema.Types.ObjectId, ref: 'User', required: true},
 }, {
   timestamps: true,
