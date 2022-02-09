@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { checkToken } from '../../utilities/users-service';
+import { searchForSongs } from '../../utilities/songs-api';
 
 export default function SongSearchPage() {
   const [searchString, setSearchString] = useState('');
@@ -9,7 +10,8 @@ export default function SongSearchPage() {
     // Prevent form from being submitted to the server
     evt.preventDefault();
     try {
-      // const user = await usersService.login(credentials);
+      const songs = await searchForSongs(searchString);
+      console.log(songs);
       // setUser(user);
     } catch {
       setError('Log In Failed - Try Again');

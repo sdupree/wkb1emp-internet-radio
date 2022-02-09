@@ -13,6 +13,7 @@ async function index(req, res) {
 
 // Find songs (search).
 async function findSongs(req, res) {
+  console.log(Song);
   const songs = await Song.find({title: req.params.title});
   res.json(songs);
 }

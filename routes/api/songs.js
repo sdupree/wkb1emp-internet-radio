@@ -4,7 +4,7 @@ const songsCtrl = require('../../controllers/api/songs');
 
 // GET /api/songs/
 router.get('/', songsCtrl.index);
-// GET /api/songs/song
-router.get('/song', songsCtrl.song);
+// POST /api/songs/search
+router.post('/search', songsCtrl.findSongs);
 
 module.exports = router;
