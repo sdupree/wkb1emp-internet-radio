@@ -4,7 +4,8 @@ const playlistCtrl = require('../../controllers/api/playlist');
 
 // GET /api/playlist/
 router.get('/', playlistCtrl.index);
+
 // POST /api/playlist/add
-router.get('/song', playlistCtrl.addEntry);
+router.get('/add', playlistCtrl.addEntry);
 
 module.exports = router;

@@ -2,7 +2,7 @@ const Song = require('../../models/song');
 
 module.exports = {
   index,
-  findSong
+  findSongs
 };
 
 // Get all the songs.
@@ -11,9 +11,9 @@ async function index(req, res) {
   res.json(songs);
 }
 
-// Find one song (search).
-async function findSong(req, res) {
-  const song = await Song.find({title: req.params.title});
-  res.json(song);
+// Find songs (search).
+async function findSongs(req, res) {
+  const songs = await Song.find({title: req.params.title});
+  res.json(songs);
 }
 
