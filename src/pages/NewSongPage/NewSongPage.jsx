@@ -12,10 +12,9 @@ export default function NewSongPage() {
   const [error, setError] = useState('');
 
   async function handleSubmit(evt) {
-    // Prevent form from being submitted to the server
-    evt.preventDefault();
+    evt.preventDefault();  // Prevent browser from submitting form.
     try {
-      const songs = await searchForSongs(newSong);
+      const songs = await addNewSong(newSong);
       console.log(songs);
     } catch {
       setError('Add Song Failed - Try Again');

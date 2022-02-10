@@ -13,3 +13,8 @@ export function searchForSongs(searchString) {
   return sendRequest(`${BASE_URL}/search`, 'POST');
 }
 
+export function addNewSong(searchString) {
+  // Send search criteria.
+  return sendRequest(`${BASE_URL}/create`, 'POST');
+}
+
