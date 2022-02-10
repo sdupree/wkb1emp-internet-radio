@@ -5,9 +5,9 @@ export default function NewSongPage() {
   const [newSong, setNewSong] = useState({
     title: '',
     artist: '',
-    length: '',
+    length: '0',
     album: '',
-    releaseYear: ''
+    releaseYear: '2022'
   });
   const [error, setError] = useState('');
 
@@ -39,12 +39,12 @@ export default function NewSongPage() {
             <input type="text" name="title" value={newSong.title} onChange={handleChange}/>
             <label>Artist:</label>
             <input type="text" name="artist" value={newSong.artist} onChange={handleChange}/>
-            <label>Length:</label>
-            <input type="text" name="length" value={newSong.length} onChange={handleChange}/>
+            <label>Length (in seconds):</label>
+            <input type="number" name="length" value={newSong.length} min="0" onChange={handleChange}/>
             <label>Album:</label>
             <input type="text" name="album" value={newSong.album} onChange={handleChange}/>
             <label>Release Year:</label>
-            <input type="text" name="releaseYear" value={newSong.releaseYear} onChange={handleChange}/>
+            <input type="number" name="releaseYear" value={newSong.releaseYear} min="1900" max="2023" onChange={handleChange}/>
             <button type="submit">ADD SONG</button>
           </form>
           <p className="error-message">&nbsp;{error}</p>
