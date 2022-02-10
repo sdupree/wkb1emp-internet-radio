@@ -17,6 +17,7 @@ export default function Menu({user, setUser}) {
       <Link to="/playlist/upcoming">Upcoming Songs</Link>
       <Link to="/playlist/history">Previous Songs</Link>
       <Link to="/songs/search">Search For A Song</Link>
+      <Link to="/songs/new">Add A New Song</Link>
       { user ?
         <Link onClick={handleLogOut} to="">Log Out</Link>
         :

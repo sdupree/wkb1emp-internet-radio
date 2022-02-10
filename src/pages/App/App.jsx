@@ -5,6 +5,7 @@ import AuthPage from '../AuthPage/AuthPage';
 import HomePage from '../HomePage/HomePage';
 import PlaylistHistoryPage from '../PlaylistHistoryPage/PlaylistHistoryPage';
 import SongSearchPage from '../SongSearchPage/SongSearchPage';
+import NewSongPage from '../NewSongPage/NewSongPage';
 import Header from '../../components/Header/Header';
 import './App.css';
 
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/playlist/history" element={<PlaylistHistoryPage />} />
           <Route path="/songs/search" element={<SongSearchPage />} />
+          <Route path="/songs/new" element={<NewSongPage />} />
           <Route path="/authpage" element={<AuthPage />} />
           <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
