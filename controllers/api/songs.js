@@ -21,10 +21,10 @@ async function findSongs(req, res) {
 
 // Create new song.
 async function create(req, res) {
-  console.log(Song);
+  console.log(req.body);
 
   // Make new Song object and save it.
-  req.body.user = req.user._id;
+  req.body.createdBy = req.user._id;
   const song = new Song(req.body);
   await song.save();
   res.json(song);

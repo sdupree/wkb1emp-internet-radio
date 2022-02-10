@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { searchForSongs } from '../../utilities/songs-api';
+import { addNewSong } from '../../utilities/songs-api';
 
 export default function NewSongPage() {
   const [newSong, setNewSong] = useState({
@@ -14,8 +14,8 @@ export default function NewSongPage() {
   async function handleSubmit(evt) {
     evt.preventDefault();  // Prevent browser from submitting form.
     try {
-      const songs = await addNewSong(newSong);
-      console.log(songs);
+      console.log("New song:", newSong);
+      await addNewSong(newSong);
     } catch {
       setError('Add Song Failed - Try Again');
     }
