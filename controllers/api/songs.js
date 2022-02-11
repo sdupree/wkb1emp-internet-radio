@@ -14,15 +14,14 @@ async function index(req, res) {
 
 // Find songs (search).
 async function findSongs(req, res) {
-  console.log(Song);
-  const songs = await Song.find({title: req.params.title});
+  const regEx = new RegExp('.*' + req.body.searchString + '.*', 'i');
+  const songs = await Song.find({$or: [{title: regEx}, {artist: regEx}]});
+  console.log(songs);
   res.json(songs);
 }
 
 // Create new song.
 async function create(req, res) {
-  console.log(req.body);
-
   // Make new Song object and save it.
   req.body.createdBy = req.user._id;
   const song = new Song(req.body);

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { checkToken } from '../../utilities/users-service';
 import { searchForSongs } from '../../utilities/songs-api';
 
 export default function SongSearchPage() {
@@ -10,17 +9,12 @@ export default function SongSearchPage() {
     // Prevent form from being submitted to the server
     evt.preventDefault();
     try {
-      const songs = await searchForSongs(searchString);
+      const songs = await searchForSongs({searchString});
       console.log(songs);
       // setUser(user);
     } catch {
       setError('Log In Failed - Try Again');
     }
-  }
-
-  async function handleCheckToken() {
-    const expDate = await checkToken();
-    console.log(expDate);
   }
 
   function handleChange(evt) {
@@ -43,8 +37,6 @@ export default function SongSearchPage() {
           <p className="error-message">&nbsp;{error}</p>
         </div>
       </div>
-
-      <button onClick={handleCheckToken}>Check When My Login Expires</button>
     </>
   );
 }

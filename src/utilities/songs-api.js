@@ -9,6 +9,7 @@ export function getAllSongs() {
 
 // Search for songs.
 export function searchForSongs(searchString) {
+  console.log("SEARCH FOR SONGS.", searchString);
   // Send search criteria.
   return sendRequest(`${BASE_URL}/search`, 'POST', searchString);
 }

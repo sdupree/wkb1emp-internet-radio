@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import * as userService from "../../utilities/users-service";
-import { slide as BurgerMenu } from 'react-burger-menu'
-import './Menu.css';
+import { slide as Menu } from 'react-burger-menu'
+import './NavMenu.css';
 
-export default function Menu({user, setUser}) {
+export default function NavMenu({user, setUser}) {
   function handleLogOut() {
     userService.logOut();
     setUser(null);
@@ -11,7 +11,7 @@ export default function Menu({user, setUser}) {
   
   return (
     <>
-    <BurgerMenu right={true}>
+    <Menu right={true}>
       <h2>Hello, {user ? user.name : "guest"}</h2>
       <Link to="/">Homepage</Link>
       <Link to="/playlist/upcoming">Upcoming Songs</Link>
@@ -23,7 +23,7 @@ export default function Menu({user, setUser}) {
         :
         <Link to="/authpage">Log In/Sign Up</Link>
       }
-    </BurgerMenu>
+    </Menu>
     
     </>
   );

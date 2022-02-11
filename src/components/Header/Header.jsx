@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
-import * as userService from "../../utilities/users-service";
-import Menu from '../Menu/Menu';
+import NavMenu from '../NavMenu/NavMenu';
 import './Header.css';
 
 export default function Header({user, setUser}) {
@@ -11,7 +10,7 @@ export default function Header({user, setUser}) {
       &nbsp; | &nbsp;
       Now Playing Component
       &nbsp; | &nbsp;
-      <Menu user={user} setUser={setUser}/>
+      <NavMenu user={user} setUser={setUser}/>
     </header>
   );
 }
