@@ -10,8 +10,8 @@ import Header from '../../components/Header/Header';
 import './App.css';
 
 export default function App() {
-  // const [user, setUser] = useState(getUser());
-  const [user, setUser] = useState({name: 'jeff'});
+  const [user, setUser] = useState(getUser());
+  // const [user, setUser] = useState({name: 'jeff'});
 
   return (
     <main className="App">
@@ -22,8 +22,8 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/playlist/history" element={<PlaylistHistoryPage />} />
           <Route path="/songs/search" element={<SongSearchPage />} />
-          <Route path="/songs/new" element={<NewSongPage />} />
-          <Route path="/authpage" element={<AuthPage />} />
+          <Route path="/songs/new" element={<NewSongPage user={user} setUser={setUser} />} />
+          <Route path="/authpage" element={<AuthPage user={user} setUser={setUser} />} />
           <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
       </>

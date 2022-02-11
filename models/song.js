@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const songSchema = new Schema({
   title: {type: String, required: true},
-  artist: {type: Schema.Types.ObjectId, ref: 'Artist', required: true},
+  artist: {type: String, required: true},
+  // artist: {type: Schema.Types.ObjectId, ref: 'Artist', required: true},
   length: {type: Number, required: true},
   album: {type: String},
   releaseYear: {type: Number, default: 1982},
