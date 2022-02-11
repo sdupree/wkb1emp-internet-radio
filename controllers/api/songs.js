@@ -16,7 +16,7 @@ async function index(req, res) {
 async function findSongs(req, res) {
   const regEx = new RegExp('.*' + req.body.searchString + '.*', 'i');
   const songs = await Song.find({$or: [{title: regEx}, {artist: regEx}]});
-  console.log(songs);
+  console.log("Songs fonud:", songs.length);
   res.json(songs);
 }
 
