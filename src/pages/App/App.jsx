@@ -8,6 +8,7 @@ import SongSearchPage from '../SongSearchPage/SongSearchPage';
 import NewSongPage from '../NewSongPage/NewSongPage';
 import Header from '../../components/Header/Header';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
