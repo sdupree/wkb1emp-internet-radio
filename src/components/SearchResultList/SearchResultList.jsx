@@ -1,5 +1,4 @@
 import SongListItem from '../SongListItem/SongListItem';
-import Table from 'react-bootstrap/Table';
 
 export default function SearchResultList({ searchResults }) {
   const items = searchResults.map(song =>
@@ -11,17 +10,23 @@ export default function SearchResultList({ searchResults }) {
     />
   );
   return (
-    <Table striped>
-      <thead>
-        <tr>
-          <th>Song Title</th>
-          <th>Artist</th>
-          <th>Duration</th>
-        </tr>
-      </thead>
-      <tbody>
-        {items}
-      </tbody>
-    </Table>
+    <>
+      { items.length ?
+        <table>
+          <thead>
+            <tr>
+              <th>Song Title</th>
+              <th>Artist</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            {items}
+          </tbody>
+        </table>
+      :
+        <></>
+      }
+    </>
   );
 }
