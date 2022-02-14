@@ -20,10 +20,14 @@ export default function NavMenu({user, setUser}) {
       { user ?
         <>
           <Link to="/songs/new">Add A New Song</Link>
+          <hr />
           <Link onClick={handleLogOut} to="">Log Out</Link>
         </>
         :
-        <Link to="/authpage">Log In/Sign Up</Link>
+        <>
+          <hr />
+          <Link to="/authpage">Log In/Sign Up</Link>
+        </>
       }
     </Menu>
     
