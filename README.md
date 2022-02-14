@@ -1,4 +1,6 @@
+<img src="screenshots/wkb1emp_logo.png">
 # WKB1EMP Internet Radio Station Automation System
+
 WKB1EMP Internet Radio Station Automation System is an internet frontend for a traditional broadcast radio station. The concept is that listeners can come to the site, log in, and request songs to be played over the air. Other features include viewing a list of songs the station has played recently, viewing a list of requests coming up on the station, view details about a song in the station's database, and leave comments on the songs.
 
 Presently the system does not have a backend to run as a standalone server, as there is no available broadcast radio station to attach the system to. Also, there is no database of actual music, as that is both a challenge in terms of data management, and potential copyright issues. A licensed radio station could easily integrate this software by building just a handful of additional components.
