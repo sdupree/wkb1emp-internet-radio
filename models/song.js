@@ -14,16 +14,24 @@ const songSchema = new Schema({
   toJSON: { virtuals: true }
 });
 
-songSchema.statics.createOrUpdateSong = function(song, userId) {
-  if(! song.createdBy) song.createdBy = userId;  // Set createdBy for new song.
-
-  if(song._id && song.createdBy != userId) return false;  // Assure song was created by user.
+songSchema.statics.createOrUpdate = function(song, userId) {
+  console.log(song);
+  console.log(userId);
+  if((! song.createdBy) && (! song._id)) {
+    // New song; add fields.
+    song.createdBy = userId;
+    song._id = new mongoose.mongo.ObjectID();
+  } else if(song.createdBy != userId) {
+    // Assure existing song was created by user.
+    return false;
+  }
 
   return this.findOneAndUpdate(
     // query obj
     {_id: song._id},
     // update obj
-    {title: song.title,
+    {_id: song._id,
+      title: song.title,
       artist: song.artist,
       duration: song.duration,
       album: song.album,

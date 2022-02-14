@@ -3,7 +3,7 @@ import { searchForSongs } from '../../utilities/songs-api';
 import SongTable from '../../components/SongTable/SongTable';
 import './SongSearchPage.css';
 
-export default function SongSearchPage() {
+export default function SongSearchPage({user}) {
   const [searchString, setSearchString] = useState('');
   const [songSearchResults, setSongSearchResults] = useState([]);
   const [error, setError] = useState('');
@@ -39,7 +39,7 @@ export default function SongSearchPage() {
           </form>
           <p className="error-message">&nbsp;{error}</p>
         </div>
-        <SongTable songs={songSearchResults} />
+        <SongTable songs={songSearchResults} user={user} />
       </div>
     </>
   );

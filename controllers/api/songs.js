@@ -16,12 +16,13 @@ async function index(req, res) {
 async function findSongs(req, res) {
   const regEx = new RegExp('.*' + req.body.searchString + '.*', 'i');
   const songs = await Song.find({$or: [{title: regEx}, {artist: regEx}]});
-  console.log("Songs fonud:", songs.length);
+  console.log("Songs found:", songs.length);
   res.json(songs);
 }
 
 // Create new song, or update existing song.
 async function createOrUpdateSong(req, res) {
-  const song = await Song.createOrUpdate(req.body.song, req.user._id);
+  console.log(req.user._id);
+  const song = await Song.createOrUpdate(req.body, req.user._id);
   res.json(song);
 }
