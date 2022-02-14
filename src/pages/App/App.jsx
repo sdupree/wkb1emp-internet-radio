@@ -24,9 +24,9 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/playlist/history" element={<PlaylistHistoryPage />} />
           <Route path="/songs/search" element={<SongSearchPage user={user}/>} />
-          <Route path="/songs/new" element={<NewSongPage user={user} setUser={setUser} />} />
-          <Route path="/songs/detail/:id" element={<DetailSongPage user={user} setUser={setUser} />} />
-          <Route path="/songs/edit/:id" element={<EditSongPage user={user} setUser={setUser} />} />
+          <Route path="/songs/new" element={<NewSongPage user={user} />} />
+          <Route path="/songs/detail/:id" element={<DetailSongPage user={user} />} />
+          <Route path="/songs/edit/:id" element={<EditSongPage user={user} />} />
           <Route path="/authpage" element={<AuthPage user={user} setUser={setUser} />} />
           <Route path="/*" element={<Navigate to="/" />} />
         </Routes>

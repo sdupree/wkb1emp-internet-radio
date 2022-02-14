@@ -3,7 +3,8 @@ const Song = require('../../models/song');
 module.exports = {
   index,
   findSongs,
-  createOrUpdateSong
+  createOrUpdateSong,
+  findSongById
 };
 
 // Get all the songs.
@@ -22,7 +23,12 @@ async function findSongs(req, res) {
 
 // Create new song, or update existing song.
 async function createOrUpdateSong(req, res) {
-  console.log(req.user._id);
   const song = await Song.createOrUpdate(req.body, req.user._id);
+  res.json(song);
+}
+
+// Find a song by ID.
+async function findSongById(req, res) {
+  const song = await Song.findById(req.body.id).exec();
   res.json(song);
 }

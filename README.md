@@ -6,8 +6,8 @@ Presently the system does not have a backend to run as a standalone server, as t
 The app is designed to be easily extensible. One major future upgrade is to add a DJ scheduling system, so the music can only be selected by a specific user during a certain time period.
 
 ## Screenshots:
-<a href="screenshots/screenshot0.jpg"><img src="screenshots/screenshot0.jpg" width="112" height="100"></a>
-<a href="screenshots/screenshot1.jpg"><img src="screenshots/screenshot1.jpg" width="112" height="100"></a>
+<a href="screenshots/screenshot0.png"><img src="screenshots/screenshot0.png" width="112" height="100"></a>
+<a href="screenshots/screenshot1.png"><img src="screenshots/screenshot1.png" width="112" height="100"></a>
 <a href="screenshots/screenshot2.png"><img src="screenshots/screenshot2.png" width="112" height="100"></a>
 <a href="screenshots/screenshot3.png"><img src="screenshots/screenshot3.png" width="112" height="100"></a>
 <a href="screenshots/screenshot4.png"><img src="screenshots/screenshot4.png" width="112" height="100"></a>

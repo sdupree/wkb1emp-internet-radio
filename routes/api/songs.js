@@ -14,4 +14,7 @@ router.post('/create', songsCtrl.createOrUpdateSong);
 // POST /api/songs/update
 router.post('/update', songsCtrl.createOrUpdateSong);
 
+// POST /api/songs/detail
+router.post('/detail', songsCtrl.findSongById);
+
 module.exports = router;

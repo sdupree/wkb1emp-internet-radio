@@ -20,3 +20,7 @@ export function addNewSong(newSong) {
 export function editSong(song) {
   return sendRequest(`${BASE_URL}/update`, 'POST', song);
 }
+
+export function getSong(song_id) {
+  return sendRequest(`${BASE_URL}/detail`, 'POST', song_id);
+}
