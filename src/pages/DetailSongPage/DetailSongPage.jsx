@@ -1,13 +1,15 @@
-import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { getSong } from '../../utilities/songs-api';
+import { getSong, deleteSong } from '../../utilities/songs-api';
 import SongDetail from '../../components/SongDetail/SongDetail';
 
 export default function DetailSongPage({user}) {
   const [song, setSong] = useState(null);
   const [error, setError] = useState('');
   const song_id = useParams();
+  const navigate = useNavigate();
+
+  console.log(song_id);
 
   useEffect(function() {
     async function getSongDetails() {
@@ -19,13 +21,13 @@ export default function DetailSongPage({user}) {
 
   async function handleEditSubmit(evt) {
     evt.preventDefault();
-    navigate(`/songs/edit/${song_id}`);
+    navigate(`/songs/edit/${song_id.id}`);
   }
 
   async function handleDeleteSubmit(evt) {
     evt.preventDefault();
     try {
-      const result = await deleteSongs(song_id);
+      const result = await deleteSong(song_id);
       navigate('/');
     } catch {
       setError('Delete Failed - Try Again?');

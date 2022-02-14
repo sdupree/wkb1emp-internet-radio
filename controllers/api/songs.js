@@ -4,7 +4,8 @@ module.exports = {
   index,
   findSongs,
   createOrUpdateSong,
-  findSongById
+  findSongById,
+  deleteSongById
 };
 
 // Get all the songs.
@@ -30,5 +31,11 @@ async function createOrUpdateSong(req, res) {
 // Find a song by ID.
 async function findSongById(req, res) {
   const song = await Song.findById(req.body.id).exec();
+  res.json(song);
+}
+
+// Delete a song by ID.
+async function deleteSongById(req, res) {
+  const song = await Song.findByIdAndDelete(req.body.id).exec();
   res.json(song);
 }

@@ -24,3 +24,7 @@ export function editSong(song) {
 export function getSong(song_id) {
   return sendRequest(`${BASE_URL}/detail`, 'POST', song_id);
 }
+
+export function deleteSong(song_id) {
+  return sendRequest(`${BASE_URL}/delete`, 'POST', song_id);
+}
