@@ -1,0 +1,13 @@
+.mainTitle {
+  color: #61dafb;
+  font-size: 8vh;
+  margin: -2vh;
+}
+
+.mainTitle-bigger {
+  font-size: 16vh;
+  margin-left: -3vh;
+  margin-right: -2vh;
+  margin-top: -2vh;
+  margin-bottom: -2vh;
+}
