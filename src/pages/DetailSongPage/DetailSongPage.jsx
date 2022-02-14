@@ -37,7 +37,7 @@ export default function DetailSongPage({user}) {
   return (
     <>
       <SongDetail song={song} user={user} />
-      {song ?
+      {(song && user && user._id === song.createdBy) ?
         <>
           <form onSubmit={handleEditSubmit}><button type="submit">EDIT SONG</button></form>
           <form onSubmit={handleDeleteSubmit}><button type="submit">DELETE SONG</button></form>
