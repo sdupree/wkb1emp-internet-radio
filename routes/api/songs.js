@@ -9,6 +9,9 @@ router.get('/', songsCtrl.index);
 router.post('/search', songsCtrl.findSongs);
 
 // POST /api/songs/create
-router.post('/create', songsCtrl.createSong);
+router.post('/create', songsCtrl.createOrUpdateSong);
+
+// POST /api/songs/update
+router.post('/update', songsCtrl.createOrUpdateSong);
 
 module.exports = router;

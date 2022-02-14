@@ -1,0 +1,12 @@
+.SongTableRow {
+  text-align: left;
+  padding: 20px;
+}
+
+.SongTableRowTrDark {
+  background-color: #202020;
+}
+
+.SongTableRowTrLight {
+  background-color: #404040;
+}

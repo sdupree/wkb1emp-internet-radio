@@ -1,8 +1,10 @@
 import SongTableRow from '../SongTableRow/SongTableRow';
+import './SongTable.css';
 
 export default function SongTable({ songs }) {
-  const rows = songs.map(song =>
+  const rows = songs.map((song, idx) =>
     <SongTableRow 
+      idx={idx}
       id={song._id}
       title={song.title}
       artist={song.artist}
@@ -12,7 +14,7 @@ export default function SongTable({ songs }) {
   return (
     <>
       { rows.length ?
-        <table>
+        <table className="SongTable">
           <thead>
             <tr>
               <th>Song Title</th>

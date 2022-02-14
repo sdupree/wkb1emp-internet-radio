@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { searchForSongs } from '../../utilities/songs-api';
 import SongTable from '../../components/SongTable/SongTable';
+import './SongSearchPage.css';
 
 export default function SongSearchPage() {
   const [searchString, setSearchString] = useState('');
@@ -29,7 +30,7 @@ export default function SongSearchPage() {
       <h1>
         Song Search Page
       </h1>
-      <div>
+      <div className='SongSearchPageContent'>
         <div className="form-container">
           <form autoComplete="off" onSubmit={handleSubmit}>
             <label>Enter Search Text:</label>
@@ -38,8 +39,8 @@ export default function SongSearchPage() {
           </form>
           <p className="error-message">&nbsp;{error}</p>
         </div>
+        <SongTable songs={songSearchResults} />
       </div>
-      <SongTable songs={songSearchResults} />
     </>
   );
 }

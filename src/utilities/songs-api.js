@@ -9,13 +9,14 @@ export function getAllSongs() {
 
 // Search for songs.
 export function searchForSongs(searchString) {
-  console.log("SEARCH FOR SONGS.", searchString);
   // Send search criteria.
   return sendRequest(`${BASE_URL}/search`, 'POST', searchString);
 }
 
 export function addNewSong(newSong) {
-  // Send search criteria.
   return sendRequest(`${BASE_URL}/create`, 'POST', newSong);
 }
 
+export function editSong(song) {
+  return sendRequest(`${BASE_URL}/update`, 'POST', song);
+}

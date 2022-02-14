@@ -14,6 +14,29 @@ const songSchema = new Schema({
   toJSON: { virtuals: true }
 });
 
+songSchema.statics.createOrUpdateSong = function(song, userId) {
+  if(! song.createdBy) song.createdBy = userId;  // Set createdBy for new song.
+
+  if(song._id && song.createdBy != userId) return false;  // Assure song was created by user.
+
+  return this.findOneAndUpdate(
+    // query obj
+    {_id: song._id},
+    // update obj
+    {title: song.title,
+      artist: song.artist,
+      duration: song.duration,
+      album: song.album,
+      releaseYear: song.releaseYear,
+      createdBy: userId
+    },
+    // options obj
+    // upsert option creates the doc if it doesn't exist!
+    // new option will make sure the updated doc is returned
+    {upsert: true, new: true}
+  );
+};
+
 songSchema.virtual('durationDisplay').get(function() {
   return Math.floor(parseInt(this.duration) / 60) + ':' + parseInt(this.duration) % 60;
 });
