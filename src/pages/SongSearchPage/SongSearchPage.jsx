@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { searchForSongs } from '../../utilities/songs-api';
-import SearchResultList from '../../components/SearchResultList/SearchResultList';
+import SongTable from '../../components/SongTable/SongTable';
 
 export default function SongSearchPage() {
   const [searchString, setSearchString] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
+  const [songSearchResults, setSongSearchResults] = useState([]);
   const [error, setError] = useState('');
 
   async function handleSubmit(evt) {
@@ -12,10 +12,10 @@ export default function SongSearchPage() {
     evt.preventDefault();
     try {
       const songs = await searchForSongs({searchString});
-      setSearchResults(songs);
+      setSongSearchResults(songs);
       console.log(songs);
     } catch {
-      setError('Log In Failed - Try Again');
+      setError('Search Failed - Try Again');
     }
   }
 
@@ -39,7 +39,7 @@ export default function SongSearchPage() {
           <p className="error-message">&nbsp;{error}</p>
         </div>
       </div>
-      <SearchResultList searchResults={searchResults} />
+      <SongTable songs={songSearchResults} />
     </>
   );
 }

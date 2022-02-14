@@ -5,7 +5,7 @@ export default function NewSongPage() {
   const [newSong, setNewSong] = useState({
     title: '',
     artist: '',
-    length: '0',
+    duration: '0',
     album: '',
     releaseYear: '2022'
   });
@@ -39,7 +39,7 @@ export default function NewSongPage() {
             <label>Artist:</label>
             <input type="text" name="artist" value={newSong.artist} onChange={handleChange}/>
             <label>Length (in seconds):</label>
-            <input type="number" name="length" value={newSong.length} min="0" onChange={handleChange}/>
+            <input type="number" name="duration" value={newSong.duration} min="0" onChange={handleChange}/>
             <label>Album:</label>
             <input type="text" name="album" value={newSong.album} onChange={handleChange}/>
             <label>Release Year:</label>

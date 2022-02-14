@@ -1,13 +1,13 @@
 // import './SongListItem.css';
 
-export default function SongListItem({id, title, artist, length }) {
+export default function SongTableRow({id, title, artist, durationDisplay }) {
   // const orderDate = new Date(orderItem.createdAt).toLocaleDateString();
 
   return (
     <tr>
       <td>{title}</td>
       <td>{artist}</td>
-      <td>{length}</td>
+      <td>{durationDisplay}</td>
     </tr>
   );
 }

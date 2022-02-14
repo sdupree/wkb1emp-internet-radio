@@ -1,17 +1,17 @@
-import SongListItem from '../SongListItem/SongListItem';
+import SongTableRow from '../SongTableRow/SongTableRow';
 
-export default function SearchResultList({ searchResults }) {
-  const items = searchResults.map(song =>
-    <SongListItem 
+export default function SongTable({ songs }) {
+  const rows = songs.map(song =>
+    <SongTableRow 
       id={song._id}
       title={song.title}
       artist={song.artist}
-      length={song.length}
+      durationDisplay={song.durationDisplay}
     />
   );
   return (
     <>
-      { items.length ?
+      { rows.length ?
         <table>
           <thead>
             <tr>
@@ -21,7 +21,7 @@ export default function SearchResultList({ searchResults }) {
             </tr>
           </thead>
           <tbody>
-            {items}
+            {rows}
           </tbody>
         </table>
       :
